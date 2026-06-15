@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Warungseni99 | Galeri Seni, Lukisan Custom & Painting Class Bali</title>
+    
+    <meta name="description" content="Warungseni99 menyediakan lukisan original Bali, custom painting, dan painting class untuk rumah, villa, hotel, restoran, kolektor, dan pecinta seni.">
+    <meta name="keywords" content="lukisan Bali, jual lukisan di Bali, lukisan custom Bali, painting class Bali, workshop melukis Bali, lukisan untuk villa, lukisan untuk hotel, seni lukis Bali, original painting Bali, Warungseni99">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Warungseni99 | Galeri Seni, Lukisan Custom & Painting Class Bali">
+    <meta property="og:description" content="Warungseni99 menyediakan lukisan original Bali, custom painting, dan painting class untuk rumah, villa, hotel, restoran, kolektor, dan pecinta seni.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80">
+    <link rel="canonical" href="{{ url()->current() }}">
+    
+    <!-- Preload & Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconify Script -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="bg-cream text-text-dark font-body antialiased relative selection:bg-gold selection:text-dark-brown">
+
+    <!-- 1. Navbar Section -->
+    <nav id="main-navbar" class="fixed top-0 left-0 right-0 h-[72px] flex items-center justify-between px-6 md:px-12 z-50 border-b border-transparent transition-all duration-300">
+        <!-- Logo & Subtitle -->
+        <a href="#home" class="flex flex-col gap-0.5 justify-center focus:outline-none" id="nav-logo">
+            <span class="font-heading font-bold text-lg md:text-xl text-white-warm leading-none tracking-wide">Warungseni99</span>
+            <span class="font-body text-[8px] md:text-[9px] font-semibold tracking-[2px] uppercase text-gold-soft leading-none">Galeri Seni & Studio Lukisan Bali</span>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <div class="hidden lg:flex items-center gap-8">
+            <a href="#home" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-home">Home</a>
+            <a href="#keunggulan" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-keunggulan">Keunggulan</a>
+            <a href="#koleksi" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-koleksi">Koleksi</a>
+            <a href="#custom" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-custom">Custom Painting</a>
+            <a href="#kelas" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-kelas">Painting Class</a>
+            <a href="#tentang" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-tentang">Tentang Kami</a>
+            <a href="#testimoni" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-testimoni">Testimoni</a>
+            <a href="#kontak" class="text-white-warm hover:text-gold text-sm font-medium transition-colors" id="link-nav-kontak">Kontak</a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:flex items-center">
+            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda." 
+               target="_blank" 
+               class="btn-gold !py-2.5 !px-5 text-xs tracking-wider uppercase font-semibold flex items-center gap-2"
+               id="btn-nav-cta">
+                <span class="iconify text-base" data-icon="solar:phone-calling-bold"></span>
+                Hubungi Kami
+            </a>
+        </div>
+
+        <!-- Mobile Buttons -->
+        <div class="flex items-center gap-4 lg:hidden">
+            <!-- Mobile CTA Link (Visible always) -->
+            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda." 
+               target="_blank" 
+               class="btn-gold !py-2 !px-4 text-xs font-semibold flex items-center gap-1.5"
+               aria-label="Hubungi kami melalui WhatsApp"
+               id="btn-mobile-nav-cta">
+                <span class="iconify" data-icon="solar:phone-calling-bold"></span>
+                <span>Hubungi</span>
+            </a>
+            
+            <!-- Hamburger Toggle -->
+            <button id="mobile-menu-toggle" 
+                    class="text-white-warm hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold p-1 rounded"
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu" 
+                    aria-label="Buka menu navigasi">
+                <span class="iconify text-2xl" data-icon="solar:menu-hamburger-bold-duotone" id="hamburger-icon"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="absolute top-[72px] left-0 right-0 bg-dark-brown/95 backdrop-blur-md border-b border-gold/20 flex flex-col px-6 py-8 gap-5 lg:hidden shadow-xl translate-y-[-110%] opacity-0 pointer-events-none transition-all duration-300">
+            <a href="#home" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-home">Home</a>
+            <a href="#keunggulan" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-keunggulan">Keunggulan</a>
+            <a href="#koleksi" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-koleksi">Koleksi</a>
+            <a href="#custom" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-custom">Custom Painting</a>
+            <a href="#kelas" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-kelas">Painting Class</a>
+            <a href="#tentang" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-tentang">Tentang Kami</a>
+            <a href="#testimoni" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors border-b border-white-warm/5 pb-2" id="mobile-link-testimoni">Testimoni</a>
+            <a href="#kontak" class="text-white-warm hover:text-gold text-[15px] font-medium transition-colors pb-1" id="mobile-link-kontak">Kontak</a>
+        </div>
+    </nav>
+
+    <header id="home" class="relative min-h-screen flex items-center justify-start bg-cover bg-center overflow-hidden" 
+            style="background-image: url('/images/hero_custom.jpg');">
+        <!-- Ambient Left-biased overlay with 55%-80% opacity dark brown to keep text legible and painting visible -->
+        <div class="absolute inset-0 bg-gradient-to-r from-dark-brown/80 via-dark-brown/65 to-dark-brown/55"></div>
+        
+        <div class="relative w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-[100px] pb-16 flex flex-col justify-center min-h-[680px]">
+            <div class="max-w-[680px] flex flex-col gap-6 text-white-warm reveal-on-scroll">
+                <span class="uppercase-label">Seni Bali Otentik, Hadir Di Ruang Anda</span>
+                <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.15] text-white-warm">
+                    Lukisan Original Bali untuk Ruang yang Lebih Bermakna
+                </h1>
+                <p class="font-body text-base sm:text-lg text-cream-soft/90 max-w-[580px] leading-relaxed">
+                    Hadirkan keindahan, kehangatan jiwa, dan kekayaan tradisi Bali langsung ke dinding hunian Anda melalui lukisan tangan asli karya seniman terpilih.
+                </p>
+                
+                <!-- CTA buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="#koleksi" class="btn-gold flex items-center justify-center gap-2" id="hero-btn-koleksi">
+                        <span class="iconify" data-icon="solar:gallery-bold"></span>
+                        Lihat Koleksi
+                    </a>
+                    <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20konsultasi%20tentang%20lukisan%2Fpainting%20class." 
+                       target="_blank" 
+                       class="btn-outline flex items-center justify-center gap-2"
+                       id="hero-btn-wa">
+                        <span class="iconify" data-icon="solar:chat-round-line-bold"></span>
+                        Konsultasi via WhatsApp
+                    </a>
+                </div>
+
+                <!-- Social Proof in Hero -->
+                <div class="flex items-center gap-4 mt-6 pt-6 border-t border-white-warm/10">
+                    <div class="flex -space-x-3">
+                        <img class="w-8 h-8 rounded-full border-2 border-dark-brown object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar Pelanggan 1">
+                        <img class="w-8 h-8 rounded-full border-2 border-dark-brown object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Avatar Pelanggan 2">
+                        <img class="w-8 h-8 rounded-full border-2 border-dark-brown object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Avatar Pelanggan 3">
+                    </div>
+                    <div class="flex flex-col text-xs sm:text-sm">
+                        <div class="flex items-center gap-1 text-gold">
+                            <span class="iconify" data-icon="solar:star-bold"></span>
+                            <span class="iconify" data-icon="solar:star-bold"></span>
+                            <span class="iconify" data-icon="solar:star-bold"></span>
+                            <span class="iconify" data-icon="solar:star-bold"></span>
+                            <span class="iconify" data-icon="solar:star-bold"></span>
+                        </div>
+                        <span class="text-cream-soft font-medium mt-0.5">2.000+ Pelanggan Puas & Kolektor Seni</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Keunggulan Section -->
+    <section id="keunggulan" class="section-padding bg-cream relative">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <div class="text-center max-w-[680px] mx-auto mb-16 reveal-on-scroll">
+                <span class="uppercase-label">Keistimewaan Kami</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text-dark">Mengapa Memilih Warungseni99?</h2>
+                <p class="text-text-muted mt-3">Komitmen kami untuk menyajikan karya berkualitas premium dan pengalaman belajar seni terbaik langsung dari Bali.</p>
+            </div>
+
+            <!-- Grid 4 Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
+                <!-- Card 1 -->
+                <div class="card-gallery flex flex-col justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:palette-round-bold"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Lukisan Original Bali</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Setiap karya dilukis langsung menggunakan tangan (hand-painted) oleh seniman Bali berbakat dengan teknik otentik.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-gallery flex flex-col justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:ruler-pen-bold-duotone"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Custom Painting</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Sesuaikan tema, ukuran, warna, dan medium lukisan agar serasi dengan desain interior rumah atau properti Anda.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-gallery flex flex-col justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:mask-hannya-bold-duotone"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Painting Class</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Rasakan pengalaman melukis di studio kami yang dipandu seniman profesional, ramah untuk semua level pemula.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-gallery flex flex-col justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:shield-check-bold"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Kualitas & Garansi</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Penggunaan bahan premium terbaik dan garansi keaslian seni untuk ketahanan kanvas dan pigmen warna puluhan tahun.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Koleksi Lukisan Section -->
+    <section id="koleksi" class="section-padding bg-white-warm">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <div class="text-center max-w-[680px] mx-auto mb-16 reveal-on-scroll">
+                <span class="uppercase-label">Katalog Karya Terpilih</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text-dark">Koleksi Lukisan Pilihan</h2>
+                <p class="text-text-muted mt-3">Jelajahi keindahan lukisan tangan Bali dengan beragam gaya dan medium. Dapatkan sekarang atau pesan custom.</p>
+            </div>
+
+            <!-- Grid 8 cards (Masonry style layout logic, dynamic aspect ratios or grid display) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
+                
+                <!-- Painting 1 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/maturan.jpg" 
+                             alt="Lukisan Maturan" 
+                             loading="lazy">
+                        <!-- Badge status -->
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-sold-badge text-white shadow-md">SOLD OUT</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Maturan</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Acrylic On Canvas · 140 x 140 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp20.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20untuk%20memesan%20lukisan%20custom%20serupa%20dengan%20karya%20Maturan%20yang%20sudah%20sold%20out.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-outline dark !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-1">
+                                Pesan Serupa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 2 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/dakon.jpg" 
+                             alt="Lukisan Dakon" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-success-badge text-white shadow-md">Available</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Dakon</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Acrylic On Canvas · 80 x 80 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp15.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20dengan%20lukisan%20Dakon.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-primary !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-2">
+                                Tanya Karya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 3 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/Joget bumbung.jpeg" 
+                             alt="Lukisan Joget Bumbung" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-sold-badge text-white shadow-md">SOLD OUT</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Joget Bumbung</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Acrylic on Canvas · 120 x 150 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp20.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20untuk%20memesan%20lukisan%20custom%20serupa%20dengan%20karya%20Joget%20Bumbung%20yang%20sudah%20sold%20out.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-outline dark !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-3">
+                                Pesan Serupa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 4 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80" 
+                             src="/images/Kerap Sapi Madura.jpeg" 
+                             alt="Lukisan Kerap Sapi Madura" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-success-badge text-white shadow-md">Available</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Kerap Sapi Madura</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Acrylic on Canvas · 110 x 130 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp15.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20dengan%20lukisan%20Kerap%20Sapi%20Madura.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-primary !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-4">
+                                Tanya Karya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 5 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/pesona ntt.jpg" 
+                             alt="Lukisan Pesona NTT" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-sold-badge text-white shadow-md">Sold Out</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Pesona NTT</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Acrylic on Canvas · 150 x 200 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp35.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20untuk%20memesan%20lukisan%20custom%20serupa%20dengan%20karya%20Pesona%20NTT%20yang%20sudah%20sold%20out.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-outline dark !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-5">
+                                Pesan Serupa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 6 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/sate lilit.jpg" 
+                             alt="Lukisan Sate Lilit" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-success-badge text-white shadow-md">Available</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Sate Lilit</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Acrylic on Canvas · 140 x 170 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp30.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20dengan%20lukisan%20Sate%20Lilit.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-primary !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-6">
+                                Tanya Karya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 7 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/tari rudat.jpg" 
+                             alt="Lukisan Tari Rudat" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-success-badge text-white shadow-md">Available</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Tari Rudat</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Oil on Canvas · 140 x 150 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp30.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20dengan%20lukisan%20Tari%20Rudat.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-primary !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-7">
+                                Tanya Karya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting 8 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="relative rounded-lg overflow-hidden mb-4 group aspect-[4/3]">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                             src="/images/wayang lemah.jpg" 
+                             alt="Lukisan Wayang Lemah" 
+                             loading="lazy">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full uppercase bg-sold-badge text-white shadow-md">Sold Out</span>
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Wayang Lemah</h3>
+                        <span class="text-text-muted text-xs font-medium mt-1">Oil on Canvas · 140 x 150 cm</span>
+                        <div class="flex flex-col gap-3 mt-auto pt-4 border-t border-border-soft">
+                            <span class="font-bold text-sm text-text-dark">Rp20.000.000</span>
+                            <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20tertarik%20untuk%20memesan%20lukisan%20custom%20serupa%20dengan%20karya%20Wayang%20Lemah%20yang%20sudah%20sold%20out.%20Bisa%20dibantu%3F" 
+                               target="_blank" 
+                               class="btn-outline dark !py-2.5 !px-4 text-xs w-full text-center" 
+                               id="btn-koleksi-8">
+                                Pesan Serupa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Custom Painting Section -->
+    <section id="custom" class="section-padding bg-dark-brown text-white-warm relative overflow-hidden">
+        <!-- Background subtle canvas pattern -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay pointer-events-none" 
+             style="background-image: url('https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1000&q=80');"></div>
+        
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="flex flex-col gap-6 reveal-on-scroll">
+                    <span class="uppercase-label">Karya Eksklusif Sesuai Ruangan</span>
+                    <h2 class="font-heading text-3xl md:text-5xl font-semibold leading-tight text-white-warm">Layanan Custom Painting</h2>
+                    <p class="text-cream-soft/80 leading-relaxed">
+                        Punya visi atau ukuran tertentu untuk dinding villa, hotel, atau ruang keluarga Anda? Seniman profesional kami siap mengubah ide, konsep warna, dan tema Anda menjadi lukisan nyata bernilai seni tinggi.
+                    </p>
+
+                    <!-- Steps Timeline -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col gap-2 relative">
+                            <span class="font-heading text-5xl font-bold text-gold/20 leading-none">01</span>
+                            <h4 class="font-semibold text-base text-gold leading-snug">Konsultasi</h4>
+                            <p class="text-xs text-cream-soft/75">Diskusikan referensi foto, konsep tema, warna dominan, dan ukuran lukisan.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex flex-col gap-2 relative">
+                            <span class="font-heading text-5xl font-bold text-gold/20 leading-none">02</span>
+                            <h4 class="font-semibold text-base text-gold leading-snug">Desain & Konsep</h4>
+                            <p class="text-xs text-cream-soft/75">Seniman kami membuat rancangan sketsa kasat mata atau komposisi sebelum melukis.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex flex-col gap-2 relative">
+                            <span class="font-heading text-5xl font-bold text-gold/20 leading-none">03</span>
+                            <h4 class="font-semibold text-base text-gold leading-snug">Proses Profesional</h4>
+                            <p class="text-xs text-cream-soft/75">Lukisan digarap detail dengan pigmen premium dan perkembangannya kami update berkala.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex flex-col gap-2 relative">
+                            <span class="font-heading text-5xl font-bold text-gold/20 leading-none">04</span>
+                            <h4 class="font-semibold text-base text-gold leading-snug">Pengiriman Aman</h4>
+                            <p class="text-xs text-cream-soft/75">Lukisan dipackage ekstra aman dengan bubble wrap dan kayu untuk pengiriman domestik & global.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                        <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20ingin%20konsultasi%20custom%20painting." 
+                           target="_blank" 
+                           class="btn-gold flex items-center justify-center gap-2"
+                           id="btn-custom-wa">
+                            <span class="iconify" data-icon="solar:chat-round-line-bold"></span>
+                            Konsultasi Custom Painting
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Image Column -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl reveal-on-scroll aspect-[4/3] lg:aspect-auto lg:h-[480px]">
+                    <img class="w-full h-full object-cover object-center" 
+                         src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=800&q=80" 
+                         alt="Seniman Warungseni99 melukis detail kanvas" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Painting Class Section -->
+    <section id="kelas" class="section-padding bg-cream-soft">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <div class="text-center max-w-[680px] mx-auto mb-16 reveal-on-scroll">
+                <span class="uppercase-label">Aktivitas Seni Interaktif</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text-dark">Painting Class / Workshop</h2>
+                <p class="text-text-muted mt-3">Nikmati petualangan terapeutik melukis di Bali. Bebaskan imajinasi dan bawa pulang lukisan karya Anda sendiri.</p>
+            </div>
+
+            <!-- Highlight grid of class benefits -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 reveal-on-scroll">
+                <div class="bg-white-warm p-6 rounded-xl border border-border-soft flex gap-4">
+                    <div class="text-gold text-2xl shrink-0 mt-1">
+                        <span class="iconify" data-icon="solar:users-group-rounded-bold"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-base text-text-dark">Ramah Pemula</h4>
+                        <p class="text-text-muted text-xs mt-1.5 leading-relaxed">Tanpa bakat melukis pun, Anda akan dipandu bertahap dari kanvas putih hingga jadi.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white-warm p-6 rounded-xl border border-border-soft flex gap-4">
+                    <div class="text-gold text-2xl shrink-0 mt-1">
+                        <span class="iconify" data-icon="solar:cup-bold"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-base text-text-dark">Private / Grup Kecil</h4>
+                        <p class="text-text-muted text-xs mt-1.5 leading-relaxed">Kelas eksklusif untuk menjaga ketenangan suasana belajar dan perhatian dari instruktur.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white-warm p-6 rounded-xl border border-border-soft flex gap-4">
+                    <div class="text-gold text-2xl shrink-0 mt-1">
+                        <span class="iconify" data-icon="solar:case-round-minimalistic-bold-duotone"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-base text-text-dark">Peralatan Disediakan</h4>
+                        <p class="text-text-muted text-xs mt-1.5 leading-relaxed">Kanvas, kuas, cat akrilik, apron, easel, serta welcome drink sudah lengkap disiapkan.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white-warm p-6 rounded-xl border border-border-soft flex gap-4">
+                    <div class="text-gold text-2xl shrink-0 mt-1">
+                        <span class="iconify" data-icon="solar:passport-bold-duotone"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-base text-text-dark">Lokal & Wisatawan</h4>
+                        <p class="text-text-muted text-xs mt-1.5 leading-relaxed">Instruktur ramah dan komunikatif dalam Bahasa Indonesia dan Bahasa Inggris.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid of 4 classes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
+                
+                <!-- Class 1 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=400&q=80" alt="Reguler Painting Class" loading="lazy">
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Kelas Reguler</h3>
+                        <p class="text-text-muted text-xs leading-relaxed">Sesi gabungan yang menyenangkan. Cocok untuk bersosialisasi dengan sesama pecinta seni lokal maupun asing.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-border-soft flex items-center justify-between">
+                        <span class="text-xs text-text-muted">Mulai</span>
+                        <span class="font-bold text-sm text-text-dark">Rp250.000 / sesi</span>
+                    </div>
+                </div>
+
+                <!-- Class 2 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=400&q=80" alt="Private Painting Class" loading="lazy">
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Kelas Private</h3>
+                        <p class="text-text-muted text-xs leading-relaxed">Bimbingan 1-on-1 yang intensif dengan seniman pendamping untuk fokus menyempurnakan teknik melukis Anda.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-border-soft flex items-center justify-between">
+                        <span class="text-xs text-text-muted">Mulai</span>
+                        <span class="font-bold text-sm text-text-dark">Rp450.000 / sesi</span>
+                    </div>
+                </div>
+
+                <!-- Class 3 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Couple or Family Painting Class" loading="lazy">
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Couple / Family</h3>
+                        <p class="text-text-muted text-xs leading-relaxed">Aktivitas liburan intim bersama pasangan atau keluarga kecil Anda untuk melukis kenangan indah Bali.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-border-soft flex items-center justify-between">
+                        <span class="text-xs text-text-muted">Mulai</span>
+                        <span class="font-bold text-sm text-text-dark">Rp600.000 / paket</span>
+                    </div>
+                </div>
+
+                <!-- Class 4 -->
+                <div class="card-gallery h-full justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=400&q=80" alt="Event & Team Building Painting" loading="lazy">
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Team Building</h3>
+                        <p class="text-text-muted text-xs leading-relaxed">Program kelompok kreatif untuk acara komunitas, ulang tahun, gathering villa, maupun korporasi.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-border-soft flex items-center justify-between">
+                        <span class="text-xs text-text-muted">Hubungi</span>
+                        <span class="font-bold text-sm text-text-dark">Tarif Spesial</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-12 justify-center reveal-on-scroll">
+                <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20ingin%20daftar%20painting%20class." 
+                   target="_blank" 
+                   class="btn-primary"
+                   id="btn-kelas-daftar">
+                    <span class="iconify" data-icon="solar:check-square-bold"></span>
+                    Daftar Painting Class
+                </a>
+                <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20ingin%20tanya%20jadwal%20painting%20class." 
+                   target="_blank" 
+                   class="btn-outline-dark"
+                   id="btn-kelas-jadwal">
+                    <span class="iconify" data-icon="solar:calendar-date-bold"></span>
+                    Tanya Jadwal Kelas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Tentang Kami Section -->
+    <section id="tentang" class="section-padding bg-white-warm">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Column -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl reveal-on-scroll aspect-[4/3] lg:aspect-auto lg:h-[480px]">
+                    <img class="w-full h-full object-cover object-center" 
+                         src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Suasana studio lukisan Warungseni99 Bali" 
+                         loading="lazy">
+                </div>
+
+                <!-- Text Column -->
+                <div class="flex flex-col gap-6 reveal-on-scroll">
+                    <span class="uppercase-label">Dedikasi Seni Bali</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text-dark">Studio Kami, Warungseni99</h2>
+                    <p class="text-text-muted leading-relaxed">
+                        Berawal dari sanggar kecil di Sukawati, Bali, Warungseni99 tumbuh sebagai wadah apresiasi seni budaya Bali. Kami merangkul seniman lokal terpilih untuk menciptakan lukisan berkualitas galeri yang meneduhkan batin dan menyemarakkan estetika visual dinding Anda.
+                    </p>
+                    <p class="text-text-muted leading-relaxed">
+                        Bukan sekadar galeri pajang, studio kami juga membuka pintu lebar bagi siapa saja yang ingin mencurahkan jiwa seni melalui kuas. Kami percaya seni melukis adalah bahasa kedamaian hati yang bisa dinikmati siapa saja.
+                    </p>
+
+                    <!-- Trust highlights -->
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-border-soft">
+                        <div class="flex flex-col">
+                            <span class="font-heading text-3xl font-bold text-gold">20+ Tahun</span>
+                            <span class="text-text-muted text-xs mt-1">Mengabdi pada Seni Lukis</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-heading text-3xl font-bold text-gold">100% Asli</span>
+                            <span class="text-text-muted text-xs mt-1">Hand-Painted Seniman Bali</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Untuk Siapa Section -->
+    <section id="untuk-siapa" class="section-padding bg-cream">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <div class="text-center max-w-[680px] mx-auto mb-16 reveal-on-scroll">
+                <span class="uppercase-label">Kecocokan Karya</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text-dark">Seni untuk Setiap Ruang</h2>
+                <p class="text-text-muted mt-3">Lukisan kami dirancang untuk melengkapi estetika arsitektur dan menghembuskan kenyamanan spiritual.</p>
+            </div>
+
+            <!-- Grid 4 Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
+                <!-- Card 1 -->
+                <div class="card-gallery justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:home-smile-bold-duotone"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Rumah Pribadi</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Meningkatkan keindahan dekoratif ruang keluarga, ruang tidur, atau koridor masuk dengan energi Bali yang hangat.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-gallery justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:city-bold-duotone"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Villa & Hotel</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Meningkatkan daya pikat eksklusif lobi, kamar tamu, maupun koridor dengan sentuhan karya seni lokal premium Bali.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-gallery justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:compass-square-bold-duotone"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Interior Designer</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Partner terpercaya untuk pengadaan lukisan custom dengan ukuran presisi guna memenuhi konsep desain klien Anda.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-gallery justify-between">
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brown/5 flex items-center justify-center text-gold">
+                            <span class="iconify text-2xl" data-icon="solar:backpack-bold-duotone"></span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-text-dark">Pecinta Seni</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">Bagi kolektor maupun wisatawan asing/lokal yang ingin membawa pulang oleh-oleh keindahan budaya lukis Bali asli.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Testimoni Section -->
+    <section id="testimoni" class="section-padding bg-dark-brown text-white-warm">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <div class="text-center max-w-[680px] mx-auto mb-16 reveal-on-scroll">
+                <span class="uppercase-label">Apresiasi Pelanggan</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold text-white-warm">Kata Mereka yang Puas</h2>
+                <p class="text-cream-soft/70 mt-3">Kepuasan kolektor seni dan peserta kelas melukis adalah kebahagiaan terbesar kami.</p>
+                        <!-- Testimonial Slider Container -->
+            <div class="relative overflow-hidden mt-8 reveal-on-scroll">
+                <!-- Slider Wrapper -->
+                <div id="testimonial-slider" class="flex transition-transform duration-500 ease-out" style="transform: translateX(0%);">
+                    
+                    <!-- Slide 1 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Made W." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Membeli lukisan 'Pesona NTT' dari Warungseni99 untuk lobi villa kami di Ubud. Warnanya sangat hidup, teknik cat tebal, dan tamu villa sering sekali memujinya."
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Made W.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Pemilik Villa Bali</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Sarah L." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Sangat merekomendasikan kelas melukisnya! Saya pemula yang takut kuas, tetapi instruktur sangat membimbing dengan sabar dan menyenangkan. Lukisan pertama saya langsung terpajang."
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Sarah L.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Peserta Painting Class</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Kevin H." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Sebagai desainer interior, saya butuh lukisan custom dengan skema warna spesifik. Warungseni99 menyelesaikan tepat waktu, kualitas pengerjaannya luar biasa, klien saya sangat senang."
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Kevin H.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Desainer Interior</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Budi Santoso" 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Koleksi lukisan tradisional mereka memiliki detail pengerjaan yang sangat halus. Menambah nilai estetika budaya yang kuat di ruang kerja kantor kami."
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Budi Santoso</span>
+                                <span class="text-text-muted text-xs mt-0.5">Kolektor Seni</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Diana P." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Memesan 3 lukisan kanvas bertema Bali modern untuk restoran. Pelayanannya komunikatif, kita dikirimi progress bertahap lewat WA. Hasil akhirnya luar biasa memukau!"
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Diana P.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Pemilik Restoran Seminyak</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Robby K." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Ikut kelas melukis eksklusif bersama keluarga saat liburan di Gianyar. Pengalaman melukis yang santai, edukatif, dan instruktur senimannya sangat bersahabat."
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Robby K.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Wisatawan Domestik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Gede S." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Lukisan bertema ombak laut pesisir Bali yang saya pesan sangat detail dan dinamis. Menjadi pusat perhatian di ruang keluarga kami. Komunikasi selama pembuatan sangat responsif!"
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Gede S.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Pemilik Villa Seminyak</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Amanda C." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Had a wonderful time in their private painting class. The artist was extremely helpful in teaching color theory, and I went home with a canvas I'm truly proud of. Highly recommended!"
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Amanda C.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Wisatawan Asing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 9 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="bg-white-warm p-8 rounded-2xl border border-gold/15 flex flex-col justify-between h-full shadow-md hover:shadow-lg transition-all duration-300">
+                            <div class="flex flex-col">
+                                <!-- Reviewer Photo / Rating Avatar -->
+                                <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=120&h=120&q=80" 
+                                     alt="Wayan J." 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gold/30 mb-6 shrink-0 shadow-sm">
+                                <p class="text-text-dark italic text-[14px] sm:text-[15px] leading-relaxed">
+                                    "Sangat kagum dengan dedikasi Warungseni99 dalam melestarikan seni lukis klasik Bali. Detail goresan dan kualitas kanvasnya nomor satu. Sukses selalu untuk galeri!"
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-border-soft flex flex-col">
+                                <span class="font-heading font-bold text-dark-brown text-base">Wayan J.</span>
+                                <span class="text-text-muted text-xs mt-0.5">Pecinta Seni & Budaya</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slider Navigation Controls -->
+            <div class="flex flex-col items-center gap-4 mt-12 reveal-on-scroll">
+                <!-- Controls Row: [Prev] [Dots] [Next] -->
+                <div class="flex items-center gap-6">
+                    <!-- Prev Button -->
+                    <button id="slider-prev-btn" 
+                            class="w-10 h-10 rounded-full border border-gold/30 hover:border-gold text-cream-soft hover:text-gold flex items-center justify-center transition-all bg-brown/30 hover:bg-brown focus:outline-none focus:ring-2 focus:ring-gold"
+                            aria-label="Testimoni sebelumnya">
+                        <span class="iconify text-lg" data-icon="solar:arrow-left-outline"></span>
+                    </button>
+                    
+                    <!-- Dots indicators -->
+                    <div id="slider-dots" class="flex items-center gap-2.5">
+                        <!-- Dots will be populated by JS -->
+                    </div>
+
+                    <!-- Next Button -->
+                    <button id="slider-next-btn" 
+                            class="w-10 h-10 rounded-full border border-gold/30 hover:border-gold text-cream-soft hover:text-gold flex items-center justify-center transition-all bg-brown/30 hover:bg-brown focus:outline-none focus:ring-2 focus:ring-gold"
+                            aria-label="Testimoni berikutnya">
+                        <span class="iconify text-lg" data-icon="solar:arrow-right-outline"></span>
+                    </button>
+                </div>
+                
+                <!-- Helper Text below navigation -->
+                <span class="text-xs text-cream-soft/50 font-medium">Gunakan tombol panah untuk melihat testimoni lainnya.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CTA Banner Section (Large CTA) -->
+    <section class="relative section-padding bg-cover bg-center text-center text-white-warm overflow-hidden" 
+             style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1600&q=80');">
+        <!-- Overlay opacity 78% -->
+        <div class="absolute inset-0 bg-dark-brown/78"></div>
+        
+        <div class="relative w-full max-w-[800px] mx-auto px-6 z-10 reveal-on-scroll">
+            <!-- Ornament -->
+            <span class="text-gold text-3xl block mb-6">✦</span>
+            
+            <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-4 text-white-warm">
+                Pesan Lukisan atau Ikut <span class="text-gold">Painting Class</span> Sekarang!
+            </h2>
+            <p class="text-cream-soft/80 text-sm sm:text-base leading-relaxed max-w-[620px] mx-auto mb-8">
+                Hubungi kami sekarang untuk memesan lukisan impian Anda atau reservasi jadwal kelas melukis eksklusif di studio kami di Sukawati, Bali.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6281337481823?text=Halo%20Warungseni99%2C%20saya%20ingin%20memesan%20lukisan%20%2F%20ikut%20painting%20class." 
+                   target="_blank" 
+                   class="btn-gold flex items-center justify-center gap-2"
+                   id="cta-large-wa">
+                    <span class="iconify" data-icon="solar:phone-calling-bold"></span>
+                    Chat via WhatsApp
+                </a>
+                <a href="#kelas" class="btn-outline flex items-center justify-center gap-2" id="cta-large-koleksi">
+                    <span class="iconify" data-icon="solar:calendar-date-bold"></span>
+                    Lihat Jadwal Kelas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FAQ Section -->
+    <section id="faq" class="section-padding bg-white-warm">
+        <div class="max-w-[800px] mx-auto px-6">
+            <div class="text-center max-w-[680px] mx-auto mb-16 reveal-on-scroll">
+                <span class="uppercase-label">Tanya Jawab</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text-dark">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-text-muted mt-3">Ada yang ingin ditanyakan? Berikut beberapa informasi umum mengenai layanan kami.</p>
+            </div>
+
+            <!-- Accordion container -->
+            <div class="flex flex-col divide-y divide-border-soft border-t border-b border-border-soft reveal-on-scroll">
+                
+                <!-- FAQ Item 1 -->
+                <div class="py-5 flex flex-col faq-item" id="faq-item-1">
+                    <button class="w-full flex items-center justify-between text-left font-semibold text-base text-text-dark hover:text-brown focus:outline-none focus:text-brown" 
+                            aria-expanded="false" 
+                            aria-controls="faq-ans-1"
+                            id="faq-btn-1">
+                        <span>Apakah bisa custom lukisan sesuai konsep sendiri?</span>
+                        <span class="iconify text-gold text-xl transition-transform duration-300 pointer-events-none" data-icon="solar:add-circle-bold-duotone"></span>
+                    </button>
+                    <div id="faq-ans-1" class="faq-answer-wrapper">
+                        <p class="text-text-muted text-sm leading-relaxed pb-2">
+                            Tentu saja bisa. Kami sangat berpengalaman menerima custom painting dari pemilik hunian pribadi, villa, hotel, hingga desainer interior. Anda dapat berkonsultasi mengenai referensi warna, ukuran kanvas, maupun medium cat (minyak/akrilik) melalui admin WhatsApp.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="py-5 flex flex-col faq-item" id="faq-item-2">
+                    <button class="w-full flex items-center justify-between text-left font-semibold text-base text-text-dark hover:text-brown focus:outline-none focus:text-brown" 
+                            aria-expanded="false" 
+                            aria-controls="faq-ans-2"
+                            id="faq-btn-2">
+                        <span>Berapa lama proses pengerjaan custom lukisan?</span>
+                        <span class="iconify text-gold text-xl transition-transform duration-300 pointer-events-none" data-icon="solar:add-circle-bold-duotone"></span>
+                    </button>
+                    <div id="faq-ans-2" class="faq-answer-wrapper">
+                        <p class="text-text-muted text-sm leading-relaxed pb-2">
+                            Durasi pengerjaan bervariasi bergantung pada ukuran lukisan dan kerumitan konsep yang dipilih. Umumnya berkisar antara 2 hingga 4 minggu. Selama proses pengerjaan, kami akan mengirimkan pembaruan berkala berupa foto pengerjaan untuk memastikan keselarasan konsep.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="py-5 flex flex-col faq-item" id="faq-item-3">
+                    <button class="w-full flex items-center justify-between text-left font-semibold text-base text-text-dark hover:text-brown focus:outline-none focus:text-brown" 
+                            aria-expanded="false" 
+                            aria-controls="faq-ans-3"
+                            id="faq-btn-3">
+                        <span>Apakah pemula tanpa bakat bisa ikut painting class?</span>
+                        <span class="iconify text-gold text-xl transition-transform duration-300 pointer-events-none" data-icon="solar:add-circle-bold-duotone"></span>
+                    </button>
+                    <div id="faq-ans-3" class="faq-answer-wrapper">
+                        <p class="text-text-muted text-sm leading-relaxed pb-2">
+                            Sangat bisa! Seluruh rangkaian kelas melukis kami dirancang khusus ramah pemula (beginner-friendly). Instruktur kami adalah seniman berpengalaman yang akan membimbing Anda secara sabar langkah demi langkah dari teknik dasar pencampuran warna hingga goresan akhir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="py-5 flex flex-col faq-item" id="faq-item-4">
+                    <button class="w-full flex items-center justify-between text-left font-semibold text-base text-text-dark hover:text-brown focus:outline-none focus:text-brown" 
+                            aria-expanded="false" 
+                            aria-controls="faq-ans-4"
+                            id="faq-btn-4">
+                        <span>Apakah pengiriman aman ke luar kota atau ke luar negeri?</span>
+                        <span class="iconify text-gold text-xl transition-transform duration-300 pointer-events-none" data-icon="solar:add-circle-bold-duotone"></span>
+                    </button>
+                    <div id="faq-ans-4" class="faq-answer-wrapper">
+                        <p class="text-text-muted text-sm leading-relaxed pb-2">
+                            Kami memastikan standar keamanan kemasan tertinggi. Lukisan akan dibungkus dengan plastik anti-air, bubble wrap tebal berlapis, serta dikirim menggunakan opsi packing kayu (crate) standar ekspor. Kami bekerja sama dengan ekspedisi tepercaya untuk memastikan lukisan tiba dalam kondisi sempurna.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Footer Section -->
+    <footer id="kontak" class="bg-dark-brown text-white-warm pt-16 pb-8 border-t border-gold/20">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+            <!-- Grid 5 Columns (Desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-0.5">
+                        <span class="font-heading font-bold text-xl text-white-warm leading-none tracking-wide">Warungseni99</span>
+                        <span class="font-body text-[8px] font-semibold tracking-[2px] uppercase text-gold leading-none">Galeri Seni Bali</span>
+                    </div>
+                    <p class="text-cream-soft/70 text-xs leading-relaxed">
+                        Galeri lukisan original tepercaya dan studio kelas melukis interaktif di Sukawati, Gianyar, Bali.
+                    </p>
+                    <!-- Social icons -->
+                    <div class="flex items-center gap-3 mt-2">
+                        <a href="https://www.instagram.com/art_mutiara?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="w-9 h-9 rounded-full border border-gold/30 hover:border-gold flex items-center justify-center text-cream-soft hover:text-gold transition-all" aria-label="Instagram Warungseni99">
+                            <span class="iconify text-lg" data-icon="solar:camera-bold"></span>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full border border-gold/30 hover:border-gold flex items-center justify-center text-cream-soft hover:text-gold transition-all" aria-label="Facebook Warungseni99">
+                            <span class="iconify text-lg" data-icon="solar:letter-bold"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Hubungi Kami -->
+                <div class="flex flex-col gap-4">
+                    <span class="font-body text-xs font-semibold tracking-wider uppercase text-gold">Hubungi Kami</span>
+                    <ul class="flex flex-col gap-2.5 text-xs text-cream-soft/85 leading-relaxed">
+                        <li class="flex gap-2">
+                            <span class="iconify text-gold text-lg shrink-0 mt-0.5" data-icon="solar:phone-bold"></span>
+                            <span>+62 813-3748-1823</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="iconify text-gold text-lg shrink-0 mt-0.5" data-icon="solar:letter-bold"></span>
+                            <span>mohtohahasan@gmail.com</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="iconify text-gold text-lg shrink-0 mt-0.5" data-icon="solar:map-point-bold"></span>
+                            <span>BTN Alam Sukawati 24, Banjar Gelumpang, Sukawati, Gianyar Bali, 80582</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Jam Operasional -->
+                <div class="flex flex-col gap-4">
+                    <span class="font-body text-xs font-semibold tracking-wider uppercase text-gold">Jam Operasional</span>
+                    <ul class="flex flex-col gap-2 text-xs text-cream-soft/85 leading-relaxed">
+                        <li class="flex justify-between">
+                            <span>Senin – Jumat</span>
+                            <span class="font-medium text-gold-soft">09.00 – 17.00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sabtu</span>
+                            <span class="font-medium text-gold-soft">09.00 – 18.00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Minggu</span>
+                            <span class="font-medium text-gold-soft">10.00 – 16.00</span>
+                        </li>
+                        <li class="flex justify-between border-t border-white-warm/10 pt-2 mt-1">
+                            <span>Libur Nasional</span>
+                            <span class="text-red-400 font-medium">Tutup</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Jasa Pengiriman -->
+                <div class="flex flex-col gap-4">
+                    <span class="font-body text-xs font-semibold tracking-wider uppercase text-gold">Jasa Pengiriman</span>
+                    <!-- 2x2 Grayscale to color hover grid -->
+                    <div class="grid grid-cols-2 gap-2 mt-1">
+                        <div class="bg-white/5 border border-gold/10 hover:border-gold/30 rounded-lg p-2 flex items-center justify-center transition-all group h-12">
+                            <img src="/images/logos/jne.png" 
+                                 alt="Logo JNE" 
+                                 class="h-5 w-auto object-contain brightness-125 hover:brightness-100 transition-all duration-300">
+                        </div>
+                        <div class="bg-white/5 border border-gold/10 hover:border-gold/30 rounded-lg p-2 flex items-center justify-center transition-all group h-12">
+                            <img src="/images/logos/jntc.png" 
+                                 alt="Logo J&T" 
+                                 class="h-5 w-auto object-contain brightness-125 hover:brightness-100 transition-all duration-300">
+                        </div>
+                        <div class="bg-white/5 border border-gold/10 hover:border-gold/30 rounded-lg p-2 flex items-center justify-center transition-all group h-12">
+                            <img src="/images/logos/pos.png" 
+                                 alt="Logo POS Indonesia" 
+                                 class="h-8 w-auto object-contain brightness-125 hover:brightness-100 transition-all duration-300">
+                        </div>
+                        <div class="bg-white/5 border border-gold/10 hover:border-gold/30 rounded-lg p-2 flex items-center justify-center transition-all group h-12">
+                            <img src="/images/logos/tiki.png" 
+                                 alt="Logo TIKI" 
+                                 class="h-5 w-auto object-contain brightness-125 hover:brightness-100 transition-all duration-300">
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-cream-soft/50 leading-tight">Pengiriman aman & terpercaya terasuransi ke seluruh nusantara & mancanegara.</p>
+                </div>
+
+                <!-- Col 5: Nomor Rekening Admin -->
+                <div class="flex flex-col gap-4">
+                    <span class="font-body text-xs font-semibold tracking-wider uppercase text-gold">Rekening Pembayaran</span>
+                    <div class="flex flex-col gap-3">
+                        <!-- Card BRI -->
+                        <div class="bg-white-warm/5 border border-gold/10 rounded-xl p-3.5 flex flex-col relative group">
+                            <div class="flex items-center justify-between">
+                                <div class="h-10 flex items-center">
+                                    <img src="/images/logos/bri.png" 
+                                         alt="Logo Bank BRI" 
+                                         class="h-9 w-auto object-contain brightness-125 hover:brightness-100 transition-all duration-300">
+                                </div>
+                                <button class="copy-bank-btn text-cream-soft/50 hover:text-gold transition-colors p-1" 
+                                        data-account="081501019298538" 
+                                        aria-label="Salin nomor rekening BRI"
+                                        id="btn-copy-bri">
+                                    <span class="iconify" data-icon="solar:copy-bold"></span>
+                                </button>
+                            </div>
+                            <span class="font-mono text-xs text-cream-soft mt-2 tracking-wider block">0815-0101-9298-538</span>
+                            <span class="text-[10px] text-cream-soft/60 mt-0.5">a/n Muchamad Toha Hasan</span>
+                        </div>
+                        
+                        <!-- Card Mandiri -->
+                        <div class="bg-white-warm/5 border border-gold/10 rounded-xl p-3.5 flex flex-col relative group">
+                            <div class="flex items-center justify-between">
+                                <div class="h-10 flex items-center">
+                                    <img src="/images/logos/mandiri.png" 
+                                         alt="Logo Bank Mandiri" 
+                                         class="h-10 w-auto object-contain brightness-125 hover:brightness-100 transition-all duration-300">
+                                </div>
+                                <button class="copy-bank-btn text-cream-soft/50 hover:text-gold transition-colors p-1" 
+                                        data-account="1450014239020" 
+                                        aria-label="Salin nomor rekening Mandiri"
+                                        id="btn-copy-mandiri">
+                                    <span class="iconify" data-icon="solar:copy-bold"></span>
+                                </button>
+                            </div>
+                            <span class="font-mono text-xs text-cream-soft mt-2 tracking-wider block">145-0014-2390-20</span>
+                            <span class="text-[10px] text-cream-soft/60 mt-0.5">a/n Muchamad Toha Hasan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright and Back to Top Bar -->
+            <div class="border-t border-gold/15 pt-6 mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-soft/50 gap-4">
+                <span>&copy; {{ date('Y') }} Warungseni99 . Hak Cipta Dilindungi Undang-Undang.</span>
+                <a href="#home" class="flex items-center gap-1.5 hover:text-gold transition-colors font-medium p-1 group" id="btn-back-to-top">
+                    <span>Kembali ke Atas</span>
+                    <span class="iconify text-base group-hover:translate-y-[-2px] transition-transform" data-icon="solar:arrow-up-circle-bold-duotone"></span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy Feedback Tooltip element (will be positioned dynamically by JS) -->
+    <div id="copy-tooltip" class="fixed opacity-0 pointer-events-none bg-gold text-dark-brown font-bold text-xs px-2.5 py-1.5 rounded-lg shadow-lg transition-opacity duration-300 z-50 flex items-center gap-1">
+        <span class="iconify" data-icon="solar:check-circle-bold"></span>
+        <span>Nomor rekening tersalin!</span>
+    </div>
+</body>
+</html>
