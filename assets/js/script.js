@@ -5,34 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
 
     if (menuToggle && mobileMenu) {
+        const closeMobileMenu = () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.classList.remove('is-open');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-8px]');
+        };
+
+        const openMobileMenu = () => {
+            menuToggle.setAttribute('aria-expanded', 'true');
+            menuToggle.classList.add('is-open');
+            mobileMenu.classList.add('is-open');
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-8px]');
+        };
+
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            
-            // Toggle expanded state
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            
+
             if (isExpanded) {
-                // Collapse menu
-                mobileMenu.classList.add('translate-y-[-110%]', 'opacity-0', 'pointer-events-none');
-                hamburgerIcon.setAttribute('data-icon', 'solar:menu-hamburger-bold-duotone');
+                closeMobileMenu();
             } else {
-                // Expand menu
-                mobileMenu.classList.remove('translate-y-[-110%]', 'opacity-0', 'pointer-events-none');
-                hamburgerIcon.setAttribute('data-icon', 'solar:close-square-bold-duotone');
+                openMobileMenu();
             }
         });
 
         // Close menu when clicking on any link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenu.classList.add('translate-y-[-110%]', 'opacity-0', 'pointer-events-none');
-                hamburgerIcon.setAttribute('data-icon', 'solar:menu-hamburger-bold-duotone');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 
@@ -257,4 +259,3 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSlider();
     }
 });
-
